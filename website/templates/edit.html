@@ -1,0 +1,103 @@
+{% extends "base.html" %} {%block title %}Login{% endblock %} {% block content
+%}
+<div id="edit-section">
+  <form method="POST">
+    <h3 align="center">Publish Problem</h3>
+    <div class="form-group">
+      <label for="pdf">PDF Link</label>
+      <input
+        type="text"
+        class="form-control"
+        id="pdf"
+        name="pdf"
+        placeholder="Enter PDF link"
+      />
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="question">Question</label>
+      <input
+        type="text"
+        class="form-control"
+        id="question"
+        name="question"
+        placeholder="Enter the question"
+      />
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="password">Option 1</label>
+      <input
+        type="text"
+        class="form-control"
+        id="option1"
+        name="option1"
+        placeholder="Enter option 1"
+      />
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="password">Option 2</label>
+      <input
+        type="text"
+        class="form-control"
+        id="option2"
+        name="option2"
+        placeholder="Enter option 2"
+      />
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="password">Option 3</label>
+      <input
+        type="text"
+        class="form-control"
+        id="option3"
+        name="option3"
+        placeholder="Enter option 3"
+      />
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="password">Option 4</label>
+      <input
+        type="text"
+        class="form-control"
+        id="option4"
+        name="option4"
+        placeholder="Enter option 4"
+      />
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="answer">Correct Answer</label>
+      <select class="form-control" id="answer" name="answer">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="iexplanation">Explanation Link</label>
+      <input
+        type="text"
+        class="form-control"
+        id="explanation"
+        name="iexplanation"
+        placeholder="Enter Explanation link"
+      />
+    </div>
+    <br />
+    <button type="submit" class="submit-button footer-button">Publish</button>
+  </form>
+</div>
+
+{% endblock %}

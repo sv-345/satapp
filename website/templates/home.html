@@ -1,0 +1,73 @@
+{% extends "base.html" %} {%block title %}Home{% endblock %} {% block content %}
+
+<div id="problem">
+  <h1>Daily SAT Problem</h1>
+  <h2 id="current_date"></h2>
+  <script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    document.getElementById("current_date").innerHTML =
+      month + "/" + day + "/" + year;
+  </script>
+  <br />
+  <div class="row">
+    <div class="col-lg pdf-container h-100">
+      {% for problem in current_problem %}
+      <iframe id="pdf-box" src="{{problem.pdf}}"></iframe>
+      {% endfor %}
+    </div>
+    <div class="col-lg">
+      <form method="POST" class="question-box">
+        <h3 class="question">
+          {% for problem in current_problem %} {{ problem.question }} {%
+          endfor%}
+        </h3>
+        <br />
+        <input type="radio" id="option1" name="options" value="1" />
+        <label for="option1"
+          >{% for problem in current_problem %} {{ problem.option1 }} {%
+          endfor%}
+        </label>
+        <br />
+        <br />
+        <input type="radio" id="option2" name="options" value="2" />
+        <label for="option2"
+          >{% for problem in current_problem %} {{ problem.option2 }} {%
+          endfor%}
+        </label>
+        <br />
+        <br />
+        <input type="radio" id="option3" name="options" value="3" />
+        <label for="option3"
+          >{% for problem in current_problem %} {{ problem.option3 }} {%
+          endfor%}
+        </label>
+        <br />
+        <br />
+        <input type="radio" id="option4" name="options" value="4" />
+        <label for="option4"
+          >{% for problem in current_problem %} {{ problem.option4 }} {%
+          endfor%}
+        </label>
+        <br />
+        <br />
+        <div class="btn-container d-flex justify-content-center">
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+      </form>
+      {% if showex %}
+      <div id="iexplanation" name="iexplanation" class="container-fluid">
+        <h5 class="text-center">Explanation</h5>
+        <br clear="all" />
+        {% for problem in current_problem %}
+        <img id="explanation-img" src="{{problem.iexplanation}}" />
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

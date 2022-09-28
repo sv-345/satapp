@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Home</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      href="/static/style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-transparentt">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SAT with Ritesh</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#problem">Problem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link nav-youtube"
+                href="https://www.youtube.com/channel/UCp2cuDhmgrzH4gDXGNJmd6A"
+                target="_blank"
+                >Latest Video</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      
+    <div id="content-section">
+
+<div id="problem">
+  <h1>Daily SAT Problem</h1>
+  <h2 id="current_date"></h2>
+  <script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    document.getElementById("current_date").innerHTML =
+      month + "/" + day + "/" + year;
+  </script>
+  <br />
+  <div class="row">
+    <div class="col-lg pdf-container h-100">
+      
+      <iframe id="pdf-box" src="https://drive.google.com/uc?id=17vpcEy1M18XM-mrMIj2fO6LygcCGVC9n"></iframe>
+      
+    </div>
+    <div class="col-lg">
+      <form method="POST" class="question-box">
+        <h3 class="question">
+           If (x - 1)/3 = k and k = 3, what is the value of x? 
+        </h3>
+        <br />
+        <input type="radio" id="option1" name="options" value="1" />
+        <label for="option1"
+          > A) 2 
+        </label>
+        <br />
+        <br />
+        <input type="radio" id="option2" name="options" value="2" />
+        <label for="option2"
+          > B) 4 
+        </label>
+        <br />
+        <br />
+        <input type="radio" id="option3" name="options" value="3" />
+        <label for="option3"
+          > C) 9 
+        </label>
+        <br />
+        <br />
+        <input type="radio" id="option4" name="options" value="4" />
+        <label for="option4"
+          > D) 10 
+        </label>
+        <br />
+        <br />
+        <div class="btn-container d-flex justify-content-center">
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button> -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">My Notes</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            Cost: $15<br />
+            Paypal: xrverma16@gmail.com<br />
+            Venmo: @RVBusiness1M<br />
+            <br />
+            Once payment is sent, email the receipt to the email
+            (rvbusiness1m@gmail.com) and you will receive your notes within 24
+            hours
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="paypal-button" type="button" class="btn btn-primary">
+              Proceed to Paypal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <h1 class="text-center">
+        Ready to <b id="gradient">level up</b> your SAT score?
+      </h1>
+      <br />
+      <br />
+      <div class="buttons-container">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <button id="server-button" class="footer-button server-button">
+              Join Server
+            </button>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <button
+              id="subscribe-button"
+              href="https://youtube.com/c/RiteshVermaREAL"
+              class="footer-button subscribe-button"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md d-flex justify-content-center">
+            <button
+              type="button"
+              id="notes-button"
+              class="footer-button notes-button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              My Notes
+            </button>
+          </div>
+          <div class="col-md d-flex justify-content-center">
+            <button id="course-button" class="footer-button course-button">
+              My Course
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="/static/index.js"></script>
+  </body>
+</html>
